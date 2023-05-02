@@ -1,25 +1,26 @@
 /*Javascript for TP10*/
 
-// add some code to wait for the DOM
-document.addEventListener("DOMContentLoaded", function(){
-    
-    // code to load API
- const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=Pullman%2C%20WA';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '6b89e4d8b2mshb6273ec07a69aa0p1d100ajsna002df06c25d',
-		'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-	}
-};
+    // add some code to wait for the DOM
+    document.addEventListener ("DOMContentLoaded", function() {
 
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}
+
+        // code to load API
+        const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'b1191052bmsh9393381bd6d8022p103498]sna1764183a67a',
+            'X-RapidAPI-Host': 'weatherapi-com.p. rapidapi.com'
+        }    
+    };
+        
+    fetch ('https://weatherapi-com.p. rapidapi.com/current.json?q=99163', options)
+        .then (response = response. json () )
+        .then (function (response) {
+            document.querySelector ("#tempF span"). innerTML = response.current.temp_f;
+            document.querySelector ("#tempC span"). innerTML = response.current.temp_c;
+            return response;
+        })
+        .catch(err => console.error(err));
     
     
 });
